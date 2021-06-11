@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="dotGuavaTesterMobile.Pages.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView>
+        <StackLayout Margin="25">
+            <Label
+                FontSize="18"
+                HorizontalOptions="CenterAndExpand"
+                Text="This is a tester for dotGuava functionalities.&#x0a;&#x0a;This app works totally offline, it doesn't send any information over the network not even for bug reporting."
+                TextColor="White"
+                VerticalOptions="StartAndExpand" />
+
+            <Image
+                Margin="50"
+                HorizontalOptions="CenterAndExpand"
+                Source="GuavaLogo"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

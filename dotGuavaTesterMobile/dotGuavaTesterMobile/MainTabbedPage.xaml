@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="dotGuavaTesterMobile.MainTabbedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:dotGuavaTesterMobile.Pages"
+    Title="dotGuava Tester for Mobile"    
+    BackgroundColor="#263859"
+    BarBackgroundColor="#17223b" >
+    <!--  Pages can be added as references or inline  17223b   263859  -->
+
+    <TabbedPage.Children>
+        <local:HomePage Title="Home" />
+        <local:CypherPage Title="Cypher" />
+        <local:MacsPage Title="MACs" />
+        <local:TokenPage Title="Token" />
+    </TabbedPage.Children>
+</TabbedPage>

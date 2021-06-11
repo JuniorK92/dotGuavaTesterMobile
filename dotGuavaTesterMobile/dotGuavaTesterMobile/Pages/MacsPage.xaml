@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="dotGuavaTesterMobile.Pages.MacsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout Margin="0,25,0,0">
+        <ListView
+            x:Name="MacAddressesListView"
+            HasUnevenRows="True"
+            HorizontalOptions="FillAndExpand"
+            IsPullToRefreshEnabled="True"
+            IsRefreshing="{Binding IsLoading}"
+            ItemsSource="{Binding MacAddressList}"
+            RefreshCommand="{Binding LoadDataCommand}"
+            RefreshControlColor="DodgerBlue"
+            SeparatorVisibility="None">
+            <ListView.Header>
+                <StackLayout>
+                    <Label
+                        FontSize="18"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Mac Addresses"
+                        TextColor="White" />
+                    <Label
+                        Margin="0,-5,0,0"
+                        FontAttributes="Italic"
+                        FontSize="12"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Pull down to refresh data"
+                        TextColor="LightGray" />
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame
+                            Margin="25,5"
+                            BackgroundColor="DodgerBlue"
+                            BorderColor="White"
+                            CornerRadius="10"
+                            HasShadow="True">
+                            <StackLayout>
+                                <Label
+                                    FontSize="16"
+                                    Text="{Binding Name}"
+                                    TextColor="White" />
+                                <Label
+                                    FontSize="12"
+                                    Text="{Binding Detail}"
+                                    TextColor="LightGray" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

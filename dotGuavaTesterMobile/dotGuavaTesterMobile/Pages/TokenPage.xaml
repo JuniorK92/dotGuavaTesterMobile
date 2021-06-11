@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="dotGuavaTesterMobile.Pages.TokenPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView>
+        <StackLayout Margin="0,25,0,0">
+            <Button
+                Margin="25,0"
+                BackgroundColor="DodgerBlue"
+                BorderColor="White"
+                BorderWidth="1"
+                Command="{Binding ResetDataCommand}"
+                CornerRadius="15"
+                Text="Reset"
+                TextColor="White" />
+            <Entry
+                Margin="25,0"
+                ClearButtonVisibility="WhileEditing"
+                HorizontalTextAlignment="Center"
+                Placeholder="Insert reference key here"
+                PlaceholderColor="Gray"
+                Text="{Binding ReferenceKey}"
+                TextColor="White" />
+            <Entry
+                Margin="25,0"
+                ClearButtonVisibility="WhileEditing"
+                HorizontalTextAlignment="Center"
+                Keyboard="Numeric"
+                Placeholder="Insert token lengt here (4 ~ 12)"
+                PlaceholderColor="gray"
+                Text="{Binding TokenLenght}"
+                TextColor="White" />
+            <Button
+                Margin="0,15"
+                BackgroundColor="DodgerBlue"
+                BorderColor="White"
+                BorderWidth="1"
+                Command="{Binding LoadTokensCommand}"
+                CornerRadius="15"
+                HorizontalOptions="Center"
+                Text="Generate Tokens"
+                TextColor="White" />
+            <ListView
+                x:Name="TokenListView"
+                HasUnevenRows="True"
+                HorizontalOptions="FillAndExpand"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsLoading}"
+                ItemsSource="{Binding TokenList}"
+                RefreshCommand="{Binding LoadTokensCommand}"
+                RefreshControlColor="DodgerBlue"
+                SeparatorVisibility="None">
+                <ListView.Header>
+                    <StackLayout>
+                        <Label
+                            FontSize="18"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Token expiration info not ready yet"
+                            TextColor="White" />
+                        <Label
+                            Margin="0,-5,0,5"
+                            FontAttributes="Italic"
+                            FontSize="12"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Pull down to refresh data"
+                            TextColor="LightGray" />
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                HorizontalOptions="CenterAndExpand"
+                                Orientation="Horizontal">
+                                <Frame
+                                    Margin="25,5"
+                                    BackgroundColor="DodgerBlue"
+                                    BorderColor="White"
+                                    CornerRadius="15">
+                                    <Label
+                                        FontSize="18"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="{Binding TokenSetInfo_Left}"
+                                        TextColor="White" />
+                                </Frame>
+                                <Frame
+                                    Margin="25,5"
+                                    BackgroundColor="DodgerBlue"
+                                    BorderColor="White"
+                                    CornerRadius="15">
+                                    <Label
+                                        FontSize="18"
+                                        HorizontalOptions="EndAndExpand"
+                                        Text="{Binding TokenSetInfo_Right}"
+                                        TextColor="White" />
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
